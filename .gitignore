@@ -1,0 +1,21 @@
+# Eclipse metadata
+.metadata/
+
+# Build folders
+bin/
+target/
+out/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE-specific
+*.log
+*.tmp
+*.bak
+
+# Maven / Gradle
+*.iml
+.gradle/
+.idea/
