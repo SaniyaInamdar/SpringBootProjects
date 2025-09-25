@@ -1,5 +1,7 @@
 package com.saniya.SpringBoot.service;
 
+import java.util.List;
+
 import com.saniya.SpringBoot.controller.Student;
 import com.saniya.SpringBoot.dao.Dao;
 
@@ -16,5 +18,9 @@ public class StudentService {
 		
 		public void updateStudent(int id,String name) throws Exception{
 			d.updateStudent(id, name);
+		}
+		
+		public List<Student> showStudents() throws  Exception{
+			return d.showStudents();
 		}
 }
