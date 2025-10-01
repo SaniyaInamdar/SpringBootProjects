@@ -46,6 +46,14 @@ public class Dao {
 		pstmt.executeUpdate();
 	}
 	
+	public void updateStudentByObject(Student s) throws Exception{
+		String sql="update student set name=? where id=?";
+		pstmt=getConnection().prepareStatement(sql);
+		pstmt.setString(1, s.getName());
+		pstmt.setInt(2, s.getId());
+		pstmt.executeUpdate();
+	}
+	
 	public List<Student> showStudents() throws  Exception{
 		String sql="select *from student";
 		pstmt=getConnection().prepareStatement(sql);
@@ -58,5 +66,17 @@ public class Dao {
 			list.add(s);
 		}
 		return list;
+	}
+	
+	public Student getStudentById(int id) throws Exception{
+		String sql="select *from student where id=?";
+		pstmt=getConnection().prepareStatement(sql);
+		pstmt.setInt(1,id);
+		Student stud=null;
+		ResultSet rs=pstmt.executeQuery();
+		while(rs.next()) {
+			stud=new Student(rs.getInt(1),rs.getString(2));
+		}
+		return stud;
 	}
 }

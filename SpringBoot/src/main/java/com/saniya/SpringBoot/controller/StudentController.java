@@ -31,10 +31,19 @@ public class StudentController {
 		service.updateStudent(id, s.getName());
 	}
 	
+	@PutMapping("/update")
+	public void updateStudentByObject(@RequestBody Student s) throws Exception{
+		service.updateStudentByObject(s);
+	}
+	
 	@GetMapping("/get")
 	public List<Student> getAllStudents()throws Exception{
 		return service.showStudents();
 	}
 	
+	@GetMapping("/getbyid/{id}")
+	public Student getStudentById(@PathVariable int id) throws Exception{
+		return service.getStudentById(id);
+	}
 	
 }

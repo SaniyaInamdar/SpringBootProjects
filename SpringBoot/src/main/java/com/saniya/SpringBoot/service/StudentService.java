@@ -20,7 +20,15 @@ public class StudentService {
 			d.updateStudent(id, name);
 		}
 		
+		public void updateStudentByObject(Student s) throws Exception{
+			d.updateStudentByObject(s);
+		}
+		
 		public List<Student> showStudents() throws  Exception{
 			return d.showStudents();
+		}
+		
+		public Student getStudentById(int id) throws Exception{
+			return d.getStudentById(id);
 		}
 }
